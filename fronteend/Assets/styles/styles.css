@@ -11,36 +11,83 @@ body {
   line-height: 1.6;
 }
 
-.topo {
-  background-color: #fff;
-  padding: 1rem;
+.top-header {
+  background-color: #ffcedf;
+  padding: 20px;
+  text-align: center;
+  color: #000;
+  border-bottom: 2px solid #f8a5b7;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #ccc;
 }
 
-.topo h1 {
-  color: #333;
-  margin-bottom: 0.5rem;
+.top-header h1 {
+  margin-bottom: 0;
 }
 
-.menu {
-  display: flex;
-  gap: 1rem;
+.main-nav ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
-.menu a {
+.main-nav a {
   text-decoration: none;
-  color: #555;
+  color: #333;
   font-weight: bold;
   transition: color 0.3s ease;
 }
 
-.menu a:hover {
+.main-nav a:hover {
   color: #ff69b4;
+}
+
+.portfolio-container {
+  padding: 40px;
+}
+
+.product-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  width: 220px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.product-card h2 {
+  font-size: 18px;
+  margin: 10px 0 5px;
+  color: #222;
+}
+
+.product-card p {
+  font-weight: bold;
+  color: #ff7990;
 }
 
 .apresentacao {
@@ -65,9 +112,10 @@ body {
   background-color: #fff;
   padding: 1rem;
   border-radius: 15px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   max-width: 220px;
   flex: 1 1 200px;
+  text-align: center;
 }
 
 .produto img {
@@ -79,6 +127,7 @@ body {
 .produto h3 {
   margin: 0.5rem 0;
   font-size: 1.1rem;
+  color: #222;
 }
 
 .produto p {
@@ -93,15 +142,6 @@ body {
   color: #ff69b4;
 }
 
-.rodape {
-  background-color: #fff;
-  padding: 1rem;
-  text-align: center;
-  border-top: 2px solid #ccc;
-  margin-top: 3rem;
-  font-size: 0.9rem;
-}
-
 .content-container {
   padding: 20px;
   display: flex;
@@ -111,11 +151,14 @@ body {
   margin: 0 auto;
 }
 
-.about-section, .contact-section {
+.about-section,
+.contact-section,
+.team-section,
+.apply-section {
   background-color: #fdfdfd;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .contact-section ul {
@@ -127,84 +170,65 @@ body {
   margin-bottom: 10px;
 }
 
-.main-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 10px 0;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.main-nav a {
-  text-decoration: none;
-  color: #000;
-  font-weight: bold;
-  transition: color 0.2s;
-}
-
-.main-nav a:hover {
-  color: #ff7990;
-}
-
 .site-footer {
   text-align: center;
   padding: 20px;
   background-color: #000;
   color: #fff;
+  margin-top: 3rem;
 }
 
-.top-header {
-  background-color: #ffcedf;
-  padding: 20px;
-  text-align: center;
-  color: #000;
-}
-
-.portfolio-container {
-  padding: 40px;
-}
-
-.product-gallery {
+.card-retangular {
   display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
 }
 
-.product-card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 15px;
-  width: 220px;
-  text-align: center;
-  transition: transform 0.2s ease;
-}
-
-.product-card:hover {
-  transform: translateY(-5px);
-}
-
-.product-card img {
-  width: 100%;
+.card-retangular img {
+  width: 250px;
   border-radius: 10px;
   object-fit: cover;
 }
 
-.product-card h2 {
-  font-size: 18px;
-  margin: 10px 0 5px;
+.card-info {
+  flex: 1;
+  min-width: 250px;
 }
 
-.product-card p {
+.card-info h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.card-info .preco {
+  color: #ff69b4;
   font-weight: bold;
-  color: #ff7990;
+  font-size: 1.2rem;
+  display: block;
+  margin-bottom: 10px;
 }
 
-.team-section, .apply-section {
-  background-color: #fdfdfd;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+.card-info .descricao {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.card-info .detalhes {
+  list-style: none;
+  padding: 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.card-info .detalhes li {
+  margin-bottom: 6px;
 }
